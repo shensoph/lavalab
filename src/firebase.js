@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyA8b1n6HRIY3pumwvisJKc0bHU0K3r9xh0",
-  authDomain: "lavalab-s26.firebaseapp.com",
-  projectId: "lavalab-s26",
-  storageBucket: "lavalab-s26.firebasestorage.app",
-  messagingSenderId: "492263001064",
-  appId: "1:492263001064:web:e5fe03d2b0963358e2b25d"
+  apiKey: process.env.apiKey,
+  authDomain: process.env.apiKey,
+  projectId: process.env.apiKey,
+  storageBucket: process.env.apiKey,
+  messagingSenderId: process.env.apiKey,
+  appId: process.env.apiKey
 };
 
 // Initialize Firebase
