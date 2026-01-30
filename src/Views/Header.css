@@ -1,0 +1,96 @@
+/* src/Views/Header.css */
+.header {
+    width: 100%;
+    min-height: 100vh;
+    background: #f4f4f4;
+    padding: 24px 64px;
+    box-sizing: border-box;
+    font-family: 'Cabinet Grotesk', sans-serif;
+  }
+  
+  /* ---------- NAV ---------- */
+  
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    height: 30px;
+    margin-bottom: 100px;
+  }
+  
+  .logo {
+    height: 30px;
+    width: auto;
+  }
+  
+  .navLinks {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: #111;
+  }
+  
+  /* ---------- HERO ---------- */
+  
+  .hero {
+    position: relative;
+    height: calc(100vh - 96px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* ---------- CORNER LABELS ---------- */
+  
+  .cornerLabel {
+    position: absolute;
+    height: 16x;
+  }
+  
+  .topLeft {
+    top: 60px;
+    left: 300px;
+  }
+  
+  .bottomRight {
+    bottom: 100px;
+    right: 200px;
+  }
+  
+  /* ---------- CENTER STACK ---------- */
+  
+  .heroCenter {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* SHOP ALL background */
+  
+  .shopAllText {
+    position: absolute;
+    width: 1090px;
+    max-width: 90vw;
+    z-index: 1;
+  }
+  
+  /* Shoe */
+  
+  .heroShoe {
+    width: 753px;
+    max-width: 80vw;
+    z-index: 3;
+  }
+  
+  /* Shadow image */
+  
+  .shoeShadow {
+    position: absolute;
+    bottom: -90px;
+    left: -140px;
+    width: 620px;
+  }
+  
