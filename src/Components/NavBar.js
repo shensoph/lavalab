@@ -6,9 +6,9 @@ import cart from '../assets/images/cart.svg';
 import profile from '../assets/images/profile.svg';
 import heart from '../assets/images/heartEmpty.svg';
 
-const NavBar = ({ cartRef }) => {
+const NavBar = ({ cartRef, hasBannerAbove }) => {
   return (
-    <nav className="navBar">
+    <nav className={`navBar ${hasBannerAbove ? 'navBar--bannerAbove' : ''}`}>
       <div className="navBarInner">
         <img src={logo} alt="Logo" className="logo" />
 

@@ -13,6 +13,11 @@
   backdrop-filter:blur(8px);
 
   z-index:1000;
+  transition: top 0.25s ease;
+}
+
+.navBar--bannerAbove {
+  top: 44px;
 }
 
 .logo{
