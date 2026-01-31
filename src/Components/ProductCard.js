@@ -1,7 +1,15 @@
+import { useRef } from 'react';
 import './ProductCard.css';
 
 const ProductCard = ({product,isLiked,onToggleLike,onAddToCart}) => {
   const formatMoney = (n) => `$${n}`;
+  const productImgRef = useRef(null);
+
+  const handleAddToCart = () => {
+    const rect = productImgRef.current?.getBoundingClientRect?.();
+    const imageSrc = product.image;
+    onAddToCart(product, rect ? { sourceRect: rect, imageSrc } : null);
+  };
 
   return (
     <article className="product-card">
@@ -23,9 +31,9 @@ const ProductCard = ({product,isLiked,onToggleLike,onAddToCart}) => {
           />
         </button>
 
-        <img className="product-img" src={product.image} alt={product.title} />
+        <img ref={productImgRef} className="product-img" src={product.image} alt={product.title} />
 
-        <button className="add-to-cart" type="button" onClick={() => onAddToCart(product)}>
+        <button className="add-to-cart" type="button" onClick={handleAddToCart}>
           Add To Cart
         </button>
       </div>

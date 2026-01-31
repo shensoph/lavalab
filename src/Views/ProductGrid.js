@@ -1,7 +1,8 @@
-import {useMemo,useState} from 'react';
+import { useMemo, useState, useContext } from 'react';
 import './ProductGrid.css';
 
 import ProductCard from '../Components/ProductCard';
+import { CartAnimationContext } from '../context/CartAnimationContext';
 
 import blueShoe from '../assets/images/blueShoe.png';
 import greenShoe from '../assets/images/greenShoes.png';
@@ -24,6 +25,7 @@ const ProductGrid = () => {
   ]), []);
 
   const [liked,setLiked] = useState(() => new Set());
+  const { runGenieAnimation } = useContext(CartAnimationContext) ?? {};
 
   const toggleLike = (id) => {
     setLiked((prev) => {
@@ -34,8 +36,14 @@ const ProductGrid = () => {
     });
   };
 
-  const addToCart = (product) => {
-    console.log('Add to cart:', product.id);
+  const addToCart = (product, flyData) => {
+    if (runGenieAnimation && flyData?.sourceRect && flyData?.imageSrc) {
+      runGenieAnimation(flyData, () => {
+        console.log('Add to cart:', product.id);
+      });
+    } else {
+      console.log('Add to cart:', product.id);
+    }
   };
 
   return (

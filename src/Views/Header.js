@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Header.css';
 
 import sportShoe from '../assets/images/sportShoe.png';
@@ -7,7 +7,24 @@ import shoeShadow from '../assets/images/shoeShadow.png';
 import softPad from '../assets/images/softPad.png';
 import adjustable from '../assets/images/adjustable.png';
 
+const SCROLL_FACTOR = 0.12;
+
 const Header = () => {
+  const [translateY, setTranslateY] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setTranslateY(-window.scrollY * SCROLL_FACTOR);
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const style = {
+    transform: `translateY(${translateY}px)`,
+  };
+
   return (
     <header className="header">
       {/* Hero */}
@@ -33,11 +50,14 @@ const Header = () => {
             className="shopAllText"
           />
 
-          <img
-            src={sportShoe}
-            alt="Sport Shoe"
-            className="heroShoe"
-          />
+          <div className="heroShoeWrap">
+            <img
+              src={sportShoe}
+              alt="Sport Shoe"
+              className="heroShoe"
+              style={style}
+            />
+          </div>
 
           <img
             src={shoeShadow}

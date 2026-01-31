@@ -6,7 +6,7 @@ import cart from '../assets/images/cart.svg';
 import profile from '../assets/images/profile.svg';
 import heart from '../assets/images/heartEmpty.svg';
 
-const NavBar = () => {
+const NavBar = ({ cartRef }) => {
   return (
     <nav className="navBar">
       <div className="navBarInner">
@@ -23,7 +23,7 @@ const NavBar = () => {
 
         <div className="navIcons">
           <img src={heart} alt="Wishlist" className="navIcon" />
-          <img src={cart} alt="Cart" className="navIcon" />
+          <img ref={cartRef} src={cart} alt="Cart" className="navIcon" data-cart-icon />
           <img src={profile} alt="Profile" className="navIcon" />
         </div>
       </div>
