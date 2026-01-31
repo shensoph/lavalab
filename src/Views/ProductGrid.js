@@ -1,9 +1,12 @@
-import {useMemo,useContext} from 'react';
+import {useEffect,useMemo,useState,useContext} from 'react';
 import './ProductGrid.css';
 
 import ProductCard from '../Components/ProductCard';
 import {CartAnimationContext} from '../context/CartAnimationContext';
 import {ShopContext} from '../context/ShopContext';
+
+import {collection,getDocs} from 'firebase/firestore';
+import {db} from '../firebase';
 
 import blueShoe from '../assets/images/blueShoe.png';
 import greenShoe from '../assets/images/greenShoes.png';
@@ -13,19 +16,45 @@ import heartFilled from '../assets/images/heartFilled.svg';
 import heartEmpty from '../assets/images/heartEmpty.svg';
 
 const ProductGrid = () => {
-  const products = useMemo(() => ([
-    {id:'p1',title:'HAVIT HV-G92 Gamepad',price:160,originalPrice:null,rating:5,reviewCount:88,image:whiteShoe,heartFilled,heartEmpty},
-    {id:'p2',title:'HAVIT HV-G92 Gamepad',price:160,originalPrice:null,rating:5,reviewCount:88,image:redShoe,heartFilled,heartEmpty},
-    {id:'p3',title:'HAVIT HV-G92 Gamepad',price:160,originalPrice:null,rating:5,reviewCount:88,image:blueShoe,heartFilled,heartEmpty},
-    {id:'p4',title:'HAVIT HV-G92 Gamepad',price:960,originalPrice:1160,discountText:'-35%',rating:4,reviewCount:75,image:greenShoe,heartFilled,heartEmpty},
-    {id:'p5',title:'HAVIT HV-G92 Gamepad',price:160,originalPrice:null,rating:5,reviewCount:88,image:blueShoe,heartFilled,heartEmpty},
-    {id:'p6',title:'HAVIT HV-G92 Gamepad',price:960,originalPrice:1160,discountText:'-35%',rating:4,reviewCount:75,image:greenShoe,heartFilled,heartEmpty},
-    {id:'p7',title:'HAVIT HV-G92 Gamepad',price:160,originalPrice:null,rating:5,reviewCount:88,image:redShoe,heartFilled,heartEmpty},
-    {id:'p8',title:'HAVIT HV-G92 Gamepad',price:960,originalPrice:1160,discountText:'-35%',rating:4,reviewCount:75,image:whiteShoe,heartFilled,heartEmpty},
-  ]),[]);
-
   const {runGenieAnimation} = useContext(CartAnimationContext) ?? {};
   const shop = useContext(ShopContext);
+
+  const imageByKey = useMemo(() => ({
+    blueShoe,
+    greenShoe,
+    redShoe,
+    whiteShoe
+  }),[]);
+
+  const [products,setProducts] = useState([]);
+  const [loading,setLoading] = useState(true);
+
+  useEffect(() => {
+    let alive = true;
+
+    const load = async () => {
+      try {
+        const snap = await getDocs(collection(db,'products'));
+        const next = snap.docs.map((d) => {
+          const data = d.data();
+          return {
+            id: d.id,
+            ...data,
+            image: imageByKey[data.imageKey] ?? whiteShoe,
+            heartFilled,
+            heartEmpty
+          };
+        });
+
+        if (alive) setProducts(next);
+      } finally {
+        if (alive) setLoading(false);
+      }
+    };
+
+    load();
+    return () => { alive = false; };
+  },[imageByKey]);
 
   const addToCart = (product,flyData) => {
     if (runGenieAnimation && flyData?.sourceRect && flyData?.imageSrc) {
@@ -36,6 +65,14 @@ const ProductGrid = () => {
       shop?.addToCart(product.id,1);
     }
   };
+
+  if (loading) {
+    return (
+      <section className="product-section">
+        <div className="product-grid">Loading…</div>
+      </section>
+    );
+  }
 
   return (
     <section className="product-section">

@@ -3,9 +3,9 @@ import './CategoryTabs.css';
 
 const CategoryTabs = () => {
   return (
-    <div class="tabs-container">
-        <button class="tab-btn arrivals">NEW ARRIVALS</button>
-        <button class="tab-btn trending">WHAT'S TRENDING</button>
+    <div className="tabs-container">
+        <button className="tab-btn arrivals">NEW ARRIVALS</button>
+        <button className="tab-btn trending">WHAT'S TRENDING</button>
     </div>
   );
 };
