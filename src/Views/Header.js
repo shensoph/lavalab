@@ -1,8 +1,6 @@
-// src/Views/Header.js
 import React from 'react';
 import './Header.css';
 
-import logo from '../assets/images/logo512.png';
 import sportShoe from '../assets/images/sportShoe.png';
 import shopAll from '../assets/images/shopAll.png';
 import shoeShadow from '../assets/images/shoeShadow.png';
@@ -12,20 +10,6 @@ import adjustable from '../assets/images/adjustable.png';
 const Header = () => {
   return (
     <header className="header">
-      {/* Nav */}
-      <nav className="nav">
-        <img src={logo} alt="Logo" className="logo" />
-
-        <ul className="navLinks">
-          <li>Women</li>
-          <li>Men</li>
-          <li>Kids</li>
-          <li>Classic</li>
-          <li>Sport</li>
-          <li>Sale</li>
-        </ul>
-      </nav>
-
       {/* Hero */}
       <div className="hero">
         {/* Corner labels */}

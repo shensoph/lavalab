@@ -1,13 +1,14 @@
 import React from 'react';
-import './HomePage.css';
-import Header from './Header.js'
+import NavBar from '../Components/NavBar';
+import Header from './Header';
 
 const HomePage = () => {
-    return (
-        <div className="cafe-homepage">
-            <Header/>
-        </div>
-    );
+  return (
+    <>
+      <NavBar />
+      <Header />
+    </>
+  );
 };
 
 export default HomePage;
