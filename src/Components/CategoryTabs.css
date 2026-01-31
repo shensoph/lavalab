@@ -1,51 +1,51 @@
-/* Container spacing remains the same */
 .tabs-container {
-    display: flex;
-    gap: 20px; /* Reduced gap from 40px to 20px for smaller buttons */
-    padding: 30px;
-    padding-left: 100px;
-  }
-  
-  /* Base styling with smaller proportions */
-  .tab-btn {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    
-    /* REDUCED THESE VALUES */
-    font-size: 16px;      /* Was 32px */
-    padding: 12px 32px;   /* Was 24px 60px */
-    border-radius: 40px;  /* Slightly smaller radius for the smaller height */
-    
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 2px solid transparent; /* Border width reduced from 4px to 2px */
-    text-transform: uppercase;
-  }
-  
-  /* Variant: WHAT'S TRENDING */
-  .trending {
-    background-color: #84865A;
-    color: #FFFFFF;
-    box-shadow: 0px 6px 12px rgba(132, 134, 90, 0.3); /* Softer shadow for smaller size */
-  }
-  
-  .trending:hover {
-    background-color: transparent;
-    color: #84865A;
-    border-color: #84865A;
-    box-shadow: none;
-  }
-  
-  /* Variant: NEW ARRIVALS */
-  .arrivals {
-    background-color: #4B4D7A;
-    color: #FFFFFF;
-    box-shadow: 0px 6px 12px rgba(75, 77, 122, 0.3);
-  }
-  
-  .arrivals:hover {
-    background-color: transparent;
-    color: #4B4D7A;
-    border-color: #4B4D7A;
-    box-shadow: none;
-  }
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+  padding-left: 100px;
+}
+
+.tab-btn {
+  font-family: 'Cabinet Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  box-sizing: border-box;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  text-transform: uppercase;
+  border: 4px solid;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* WHAT'S TRENDING: fill #77794E, border #9FA16D, 4px | W 250 × H 57 */
+.tab-btn.trending {
+  width: 250px;
+  height: 57px;
+  background-color: #77794e;
+  border-color: #9fa16d;
+  color: #fff;
+}
+
+.tab-btn.trending:hover {
+  background-color: transparent;
+  color: #9fa16d;
+  border-color: #9fa16d;
+}
+
+/* NEW ARRIVALS: fill #4A4C6C, border #7C7EA1, 4px | W 215 × H 57 */
+.tab-btn.arrivals {
+  width: 215px;
+  height: 57px;
+  background-color: #4a4c6c;
+  border-color: #7c7ea1;
+  color: #fff;
+}
+
+.tab-btn.arrivals:hover {
+  background-color: transparent;
+  color: #7c7ea1;
+  border-color: #7c7ea1;
+}

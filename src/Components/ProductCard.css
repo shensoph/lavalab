@@ -114,7 +114,7 @@
   }
   
   .price-now{
-    color:#111;
+    color:var(--color-muted);
     font-weight:600;
   }
   

@@ -1,17 +1,15 @@
-.product-section{
-    padding:32px 0;
-  }
-  
-  .product-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
-  
-    max-width:1170px;
-    margin:0 auto;
-    padding:0 16px;
-    width:100%;
-  }
+.product-section {
+  padding: 32px 100px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
   
   
   @media (max-width:1100px){
