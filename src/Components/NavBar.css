@@ -16,8 +16,8 @@
   transition: top 0.25s ease;
 }
 
-.navBar--bannerAbove {
-  top: 44px;
+.navBar--bannerAbove{
+  top:44px;
 }
 
 .logo{
@@ -34,22 +34,20 @@
   padding:0;
 }
 
-.navLinks li {
-  cursor: pointer;
-  transition: text-decoration 0.2s ease;
+.navLinks li{
+  cursor:pointer;
+  transition:text-decoration 0.2s ease;
 }
 
-.navLinks li:hover {
-  text-decoration: underline;
+.navLinks li:hover{
+  text-decoration:underline;
 }
 
-/* pushes icons to the far right */
 .navIcons{
   margin-left:auto;
   display:flex;
   align-items:center;
   gap:30px;
-  /*padding-right: 100px;*/
 }
 
 .navIcon{
@@ -98,6 +96,55 @@
 
   pointer-events:none;
   box-shadow:0 2px 6px rgba(0,0,0,0.25);
-
 }
 
+/* Cart dropdown */
+.navCartWrap{
+  position:relative;
+}
+
+.navIconButton{
+  all:unset;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.cartMenu{
+  position:absolute;
+  top:calc(100% + 12px);
+  right:-6px;
+  min-width:160px;
+  padding:8px;
+
+  border-radius:14px;
+  background:rgba(255,255,255,0.96);
+  border:1px solid rgba(0,0,0,0.08);
+  box-shadow:0 12px 30px rgba(0,0,0,0.18);
+  backdrop-filter:blur(10px);
+
+  z-index:1100;
+}
+
+.cartMenuAction{
+  width:100%;
+  padding:10px 10px;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,0.10);
+  background:rgba(0,0,0,0.04);
+  color:#111;
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+  transition:transform 0.12s ease, background 0.12s ease, border-color 0.12s ease;
+}
+
+.cartMenuAction:hover{
+  background:rgba(0,0,0,0.06);
+  border-color:rgba(0,0,0,0.14);
+}
+
+.cartMenuAction:active{
+  transform:translateY(1px);
+}

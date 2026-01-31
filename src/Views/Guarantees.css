@@ -1,10 +1,10 @@
 .guarantees{
-    width:100%;
-    border-top:1px solid #E5E5E5;
-    padding:72px 0 84px;
-    background:#f4f4f4;
-    padding-top: 200px;
-  }
+  width:100%;
+  border-top:1px solid #E5E5E5;
+  padding:96px 0;
+  background:#f4f4f4;
+}
+
   
   .guaranteesInner{
     max-width:1170px;
