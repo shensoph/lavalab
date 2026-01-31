@@ -50,11 +50,13 @@
   .topLeft {
     top: 100px;
     left: 300px;
+    height: 15px;
   }
   
   .bottomRight {
     bottom: 100px;
     right: 200px;
+    height: 15px;
   }
   
   /* ---------- CENTER STACK ---------- */

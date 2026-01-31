@@ -1,0 +1,51 @@
+/* Container spacing remains the same */
+.tabs-container {
+    display: flex;
+    gap: 20px; /* Reduced gap from 40px to 20px for smaller buttons */
+    padding: 30px;
+    padding-left: 100px;
+  }
+  
+  /* Base styling with smaller proportions */
+  .tab-btn {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    
+    /* REDUCED THESE VALUES */
+    font-size: 16px;      /* Was 32px */
+    padding: 12px 32px;   /* Was 24px 60px */
+    border-radius: 40px;  /* Slightly smaller radius for the smaller height */
+    
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent; /* Border width reduced from 4px to 2px */
+    text-transform: uppercase;
+  }
+  
+  /* Variant: WHAT'S TRENDING */
+  .trending {
+    background-color: #84865A;
+    color: #FFFFFF;
+    box-shadow: 0px 6px 12px rgba(132, 134, 90, 0.3); /* Softer shadow for smaller size */
+  }
+  
+  .trending:hover {
+    background-color: transparent;
+    color: #84865A;
+    border-color: #84865A;
+    box-shadow: none;
+  }
+  
+  /* Variant: NEW ARRIVALS */
+  .arrivals {
+    background-color: #4B4D7A;
+    color: #FFFFFF;
+    box-shadow: 0px 6px 12px rgba(75, 77, 122, 0.3);
+  }
+  
+  .arrivals:hover {
+    background-color: transparent;
+    color: #4B4D7A;
+    border-color: #4B4D7A;
+    box-shadow: none;
+  }
