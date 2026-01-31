@@ -1,0 +1,157 @@
+.footer{
+    background:#333;
+    width:100%;
+  }
+  
+  .footerInner{
+    padding:58px 144px 35px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+  }
+  
+  .footerContent{
+    width:100%;
+    max-width:1213px;
+    display:flex;
+    justify-content:flex-start;
+  }
+  
+  .footerColumn{
+    width:709px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:32px;
+    overflow:hidden;
+  }
+  
+  .footerLogo{
+    width:30px;
+    height:auto;
+    display:block;
+    filter:brightness(0) invert(1);
+  }
+  
+  .footerBlock{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:4px;
+    color:#fff;
+    text-align:left;
+  }
+  
+  .footerLabel{
+    margin:0;
+    font-family:"Cabinet Grotesk",sans-serif;
+    font-weight:700;
+    font-size:16px;
+    line-height:1.5;
+    text-align:left;
+  }
+  
+  .footerText{
+    margin:0;
+    font-family:"Cabinet Grotesk",sans-serif;
+    font-weight:400;
+    font-size:16px;
+    line-height:1.5;
+    opacity:0.95;
+    text-align:left;
+  }
+  
+  .footerLinks{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+  }
+  
+  .footerLink{
+    font-family:"Cabinet Grotesk",sans-serif;
+    font-weight:400;
+    font-size:16px;
+    line-height:1.5;
+    color:#fff;
+    text-decoration:underline;
+    text-decoration-thickness:1px;
+    text-underline-offset:3px;
+    text-decoration-skip-ink:none;
+    width:max-content;
+  }
+  
+  .footerLink:hover{
+    opacity:0.85;
+  }
+  
+  .footerSocial{
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
+  
+  .footerSocialLink{
+    width:24px;
+    height:24px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:6px;
+    border:none;
+    background:none;
+    padding:0;
+    cursor:pointer;
+  }
+  
+  .footerSocialLink:hover{
+    opacity:0.85;
+  }
+  
+  .footerSocialIcon{
+    width:24px;
+    height:24px;
+    display:block;
+  }
+  
+  .footerCredits{
+    width:100%;
+    max-width:1213px;
+    margin-top:43px;
+    display:flex;
+    flex-direction:column;
+    gap:32px;
+    align-items:stretch;
+  }
+  
+  .footerDivider{
+    width:100%;
+    height:1px;
+    background:#f5f3ee;
+    opacity:0.9;
+  }
+  
+  .footerCopyright{
+    margin:0;
+    width:100%;
+    text-align:center;
+    font-family:"Cabinet Grotesk",sans-serif;
+    font-weight:400;
+    font-size:14px;
+    line-height:1.5;
+    color:#fff;
+    opacity:0.95;
+  }
+  
+  /* Responsive */
+  @media (max-width:1200px){
+    .footerInner{padding:58px 48px 35px;}
+    .footerColumn{width:100%; max-width:709px;}
+  }
+  
+  @media (max-width:640px){
+    .footerInner{padding:48px 20px 28px;}
+    .footerLogo{width:104px;}
+    .footerCredits{gap:24px;}
+  }
+  

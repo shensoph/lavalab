@@ -1,0 +1,92 @@
+.guarantees{
+    width:100%;
+    border-top:1px solid #E5E5E5;
+    padding:72px 0 84px;
+    background:#f4f4f4;
+    padding-top: 200px;
+  }
+  
+  .guaranteesInner{
+    max-width:1170px;
+    margin:0 auto;
+    padding:0 20px;
+  
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:120px;
+  }
+  
+  .guaranteeCard{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+  
+  /* Icon: gray ring + black center circle */
+  .guaranteeIconOuter{
+    width:80px;
+    height:80px;
+    border-radius:999px;
+    background:#CFCFCF;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  
+  .guaranteeIconInner{
+    width:62px;
+    height:62px;
+    border-radius:999px;
+    background:#111;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  
+  .guaranteeIcon{
+    width:80px;
+    height:80px;
+    display:block;
+    /* If your SVGs aren't already white, this makes them white-ish on the dark circle */
+  }
+  
+  .guaranteeTitle{
+    margin:22px 0 8px;
+  
+    font-family:"Cabinet Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-weight:700;
+    font-size:24px;
+    line-height:1.2;
+  
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+    color:#111;
+  }
+  
+  .guaranteeText{
+    margin:0;
+  
+    font-family:"Cabinet Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-weight:400;
+    font-size:16px;
+    line-height:1.4;
+  
+    color:#666;
+    max-width:320px;
+  }
+  
+  /* Responsive: stack nicely on smaller screens */
+  @media (max-width:900px){
+    .guaranteesInner{
+      flex-direction:column;
+      gap:48px;
+      align-items:center;
+    }
+    .guaranteeText{
+      max-width:420px;
+    }
+  }
+  
